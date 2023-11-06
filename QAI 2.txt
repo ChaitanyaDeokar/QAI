@@ -45,7 +45,21 @@ plot_histogram([counts, mitigated_counts], legend=['Original', 'Mitigated'])
 
 
 
+In simple terms, this code does the following:
 
+It creates a quantum circuit, which is like a set of instructions for a quantum computer.
+
+In this circuit, it performs some quantum operations like flipping coins (Hadamard gate) and connecting them in a special way (controlled-X gates).
+
+Then, it simulates running this circuit on a quantum computer to get measurement outcomes (results).
+
+It's like taking measurements from a quantum experiment, and sometimes these measurements have errors.
+
+To fix those errors, the code also includes a process called "error mitigation."
+
+After error mitigation, it shows the corrected measurement results in a graph, which makes it easier to understand what happened in the quantum experiment.
+
+So, in summary, the code creates a quantum experiment, runs it on a computer, fixes errors in the results, and shows the corrected outcomes in a graph.
 
 
 
