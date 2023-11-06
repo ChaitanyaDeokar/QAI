@@ -32,3 +32,44 @@ binary_number = format(random_number, '016b')
 
 print("Random number (decimal):", random_number)
 print("Random number (binary):", binary_number)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Import Qiskit Libraries and IBM Quantum Widgets:
+
+Import the necessary libraries from Qiskit, such as QuantumCircuit, Aer, execute, and visualization tools.
+Import IBM Quantum Widgets for potential visualization within a Jupyter notebook.
+Import Qiskit Runtime Service for later use.
+Create a Quantum Circuit:
+
+Create a quantum circuit named circuit with 16 quantum bits (qubits) and 16 classical bits (for measurement results).
+Apply a Hadamard gate (h) to all 16 qubits. This operation creates superposition, putting each qubit in a state of 0 and 1 simultaneously.
+Measure all 16 qubits and store the measurement results in the corresponding classical bits.
+Visualize the Circuit:
+
+Display the quantum circuit by printing it. This shows the operations and connections in the circuit.
+Simulate the Circuit:
+
+Use the Aer backend (simulator) to execute the quantum circuit with a single shot, meaning it's run once.
+Retrieve the result of the simulation, which includes the counts of measurement outcomes.
+Extract the random number from the counts by taking the keys of the counts dictionary (measurement outcomes), converting it to a binary representation, and then converting it to an integer.
+Display the Random Number:
+
+Print the random number in both decimal and binary representations.
+Here's what's happening in summary:
+
+The quantum circuit creates superposition using Hadamard gates.
+It then measures the qubits to obtain a random binary number.
+This binary number is then converted to both decimal and binary representations and displayed.
