@@ -38,3 +38,51 @@ print(mitigated_counts)
 
 # Plot the histograms of the original and mitigated counts
 plot_histogram([counts, mitigated_counts], legend=['Original', 'Mitigated'])
+
+
+
+
+
+
+
+
+
+
+
+
+In summary, this code demonstrates how to create a quantum circuit, simulate it on a noisy quantum device, and then apply error mitigation techniques to improve the accuracy of measurement outcomes. Error mitigation is crucial for achieving more reliable results when working with real quantum hardware.
+
+
+Import Qiskit Libraries and Tools:
+Import the necessary Qiskit libraries and tools, including QuantumCircuit, assemble, Aer, transpile, plot_histogram, and functions related to error mitigation.
+
+Define a Quantum Circuit:
+Create a quantum circuit named qc with 3 quantum bits (qubits) and 3 classical bits (for measurement results).
+
+Apply Gates and Operations:
+Apply a Hadamard gate (h) to the first qubit (qubit 0).
+Apply two controlled-X gates (cx) to create entanglement between qubit 0 and qubits 1 and 2.
+Measure qubits 0, 2, and 2 (yes, qubit 2 is measured twice) and store the measurement results in the corresponding classical bits (0, 2, and 2).
+
+Transpile the Circuit:
+Select the 'qasm_simulator' backend (a quantum simulator) using Aer.
+Transpile the quantum circuit qc to optimize it for the chosen backend.
+
+Simulate the Noisy Circuit:
+Assemble the transpiled quantum circuit into a Qobj (Quantum Object) with 1000 shots (measurements).
+Submit the job to the backend for execution and obtain the results, which include measurement outcomes.
+
+Perform Error Mitigation:
+Create calibration circuits for error mitigation using the complete_meas_cal function. This function generates a set of circuits to determine the measurement error probabilities.
+Submit the calibration circuits to the backend, run them, and get the calibration results.
+Use the calibration results to create a measurement fitter (meas_fitter) that characterizes the measurement errors.
+
+Apply Error Mitigation:
+Use the meas_fitter to apply error mitigation to the counts obtained in step 5. This step corrects the measurement errors to produce mitigated counts.
+
+Display Results:
+Print the original counts obtained before error mitigation.
+Print the mitigated counts after error mitigation.
+
+Plot Histograms:
+Use the plot_histogram function to create histograms for both the original counts and the mitigated counts. These histograms visually represent the measurement outcomes.
